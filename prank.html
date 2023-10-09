@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spooky Halloween Prank</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: orange; /* Change the background color here */
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        #prank-message {
+            display: none;
+            font-size: 36px;
+            color: red;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        #spooky-image {
+            display: none;
+            max-width: 100%;
+        }
+    </style>
+    <script>
+        function showPrank() {
+            const prankMessage = document.getElementById('prank-message');
+            const spookyImage = document.getElementById('spooky-image');
+            prankMessage.style.display = 'block';
+            spookyImage.style.display = 'block';
+            playSpookySound();
+        }
+
+        function playSpookySound() {
+            const audio = new Audio('spooky.mp3'); // Replace 'spooky.mp3' with your own scary audio file.
+            audio.play();
+        }
+    </script>
+</head>
+<body>
+    <h1>Click the innocent link below:</h1>
+    <a href="#" onclick="showPrank()">Click me!</a>
+    <div id="prank-message">Boo! Happy Halloween!</div>
+    <img id="spooky-image" src="https://th.bing.com/th/id/OIP.Ybb8EdMHxQYUM55sTQXSVQHaEc?w=272&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Spooky Image">
+</body>
+</html>
